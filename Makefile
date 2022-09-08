@@ -5,3 +5,6 @@ md2latex: md2latex.o md4c.o
 
 md4c.o: $(MD4C_PATH)/md4c.c
 	$(CC) -c -o $@ $^
+
+clean:
+	rm -f md2latex *.o *.aux *.fdb_latexmk *.fls *.log *.pdf *.tex
