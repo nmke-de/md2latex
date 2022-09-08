@@ -2,7 +2,7 @@
 #include <string.h>
 #include <fcntl.h>
 #include <stdlib.h>
-#include "../md4c/md4c.h"
+#include "md4c/src/md4c.h"
 
 #define print(str) write(1, (str), strlen((str)))
 #define printl(str, limit) write(1, (str), (limit))

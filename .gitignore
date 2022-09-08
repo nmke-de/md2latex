@@ -1,4 +1,5 @@
 *.o
+md2latex
 
 *.aux
 *.fdb_latexmk
