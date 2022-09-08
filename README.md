@@ -10,7 +10,7 @@ Write your thesis in Markdown! Or perhaps something else, idk.
 
 Pandoc does the job too, and it is more advanced, but take a look at the number of dependencies:
 
-![pandoc-dependencies.png](full screen terminal window filled to the brim with pandoc dependencies)
+![full screen terminal window filled to the brim with pandoc dependencies](pandoc-dependencies.png)
 
 So many dependencies scare me!
 
