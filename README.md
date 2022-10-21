@@ -1,6 +1,6 @@
 # md2latex
 
-**md2latex** is a simple (and perhaps very primitive) Markdown to Latex compiler. Currently in early development.
+**md2latex** is a simple (and perhaps very primitive) [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) to [Latex](https://en.wikibooks.org/wiki/LaTeX) compiler. Currently in early development.
 
 ## But why?
 
