@@ -28,7 +28,26 @@ int enter_block (MD_BLOCKTYPE t, void *details, void *userdata) {
 			print("\\hrulefill\n");
 			break;
 		case MD_BLOCK_H:
-			print("\\section{");
+			switch (((MD_BLOCK_H_DETAIL *) details)->level) {
+				case 1:
+					print("\\part{");
+					break;
+				case 2:
+					print("\\section{");
+					break;
+				case 3:
+					print("\\subsection{");
+					break;
+				case 4:
+					print("\\subsubsection{");
+					break;
+				case 5:
+					print("\\paragraph{");
+					break;
+				case 6:
+				default:
+					print("\\subparagraph{");
+			}
 			break;
 		case MD_BLOCK_P:
 			print("\n");
