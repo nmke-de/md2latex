@@ -98,13 +98,16 @@ int enter_span (MD_SPANTYPE t, void *details, void *userdata) {
 			print("\\textbf{");
 			break;
 		case MD_SPAN_A:
-			print("");
+			print("\\href{");
+			struct MD_SPAN_A_DETAIL *d_a = (struct MD_SPAN_A_DETAIL *) details;
+			printl(d_a->href.text, d_a->href.size);
+			print("}{");
 			break;
 		case MD_SPAN_IMG:
 			print("\\begin{figure}[h]\n");
 			print("\\includegraphics[width=\\linewidth]{");
-			struct MD_SPAN_IMG_DETAIL *d = (struct MD_SPAN_IMG_DETAIL *) details;
-			printl(d->src.text, d->src.size);
+			struct MD_SPAN_IMG_DETAIL *d_img = (struct MD_SPAN_IMG_DETAIL *) details;
+			printl(d_img->src.text, d_img->src.size);
 			print("}\n");
 			break;
 		case MD_SPAN_CODE:
@@ -194,6 +197,8 @@ int main(int argc, char **argv) {
 	close(fd);
 	print("\\documentclass{article}\n");
 	print("\\usepackage{graphicx}\n");
+	print("\\usepackage{hyperref}\n");
+	// print("\\usepackage[normalem]{ulem}\n");
 	md_parse(input, strlen(input), &p, NULL);
 	free(input);
 }
