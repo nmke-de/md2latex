@@ -82,7 +82,11 @@ int enter_span (MD_SPANTYPE t, void *details, void *userdata) {
 			print("");
 			break;
 		case MD_SPAN_IMG:
-			print("");
+			print("\\begin{figure}\n");
+			print("\\includegraphics[line=\\linewidth]{");
+			struct MD_SPAN_IMG_DETAIL *d = (struct MD_SPAN_IMG_DETAIL *) details;
+			printl(d->src.text, d->src.size);
+			print("}\n");
 			break;
 		case MD_SPAN_CODE:
 			print("\\verb!");
@@ -112,6 +116,9 @@ int leave_span (MD_SPANTYPE t, void *details, void *userdata) {
 		case MD_SPAN_LATEXMATH:
 		case MD_SPAN_LATEXMATH_DISPLAY:
 			print("$");
+			break;
+		case MD_SPAN_IMG:
+			print("\n\\end{figure}\n");
 			break;
 		default:
 			print("}");
@@ -167,6 +174,7 @@ int main(int argc, char **argv) {
 	read(fd, input, len);
 	close(fd);
 	print("\\documentclass{article}\n");
+	print("\\usepackage{graphicx}\n");
 	md_parse(input, strlen(input), &p, NULL);
 	free(input);
 }
