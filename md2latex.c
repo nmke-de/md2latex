@@ -82,8 +82,8 @@ int enter_span (MD_SPANTYPE t, void *details, void *userdata) {
 			print("");
 			break;
 		case MD_SPAN_IMG:
-			print("\\begin{figure}\n");
-			print("\\includegraphics[line=\\linewidth]{");
+			print("\\begin{figure}[h]\n");
+			print("\\includegraphics[width=\\linewidth]{");
 			struct MD_SPAN_IMG_DETAIL *d = (struct MD_SPAN_IMG_DETAIL *) details;
 			printl(d->src.text, d->src.size);
 			print("}\n");
