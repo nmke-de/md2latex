@@ -183,7 +183,7 @@ int main(int argc, char **argv) {
 	lseek(fd, 0, SEEK_SET);
 	MD_PARSER p = {
 		0,
-		0,
+		0x1060,
 		enter_block,
 		leave_block,
 		enter_span,
