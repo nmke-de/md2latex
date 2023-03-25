@@ -20,4 +20,14 @@ Type `make`.
 
 ## Usage
 
-Coming soon™.
+md2latex takes a single argument, the path of the markdown file, and prints the corresponding latex to stdout. You may want to pipe that output into a file.
+
+```bash
+md2latex file.md > file.tex
+```
+
+The generated file can then be used by utilities provided by [TeXLive](https://www.tug.org/texlive/) to generate i.e. a pdf.
+
+```bash
+latexmk -pdf
+```
