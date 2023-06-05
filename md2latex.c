@@ -15,6 +15,9 @@ int enter_block(MD_BLOCKTYPE t, void *details, void *userdata) {
 		case MD_BLOCK_QUOTE:
 			print("\\begin{displayquote}\n");
 			break;
+		case MD_BLOCK_CODE:
+			print("\\begin{verbatim}\n");
+			break;
 		case MD_BLOCK_UL:
 			print("\\begin{itemize}\n");
 			break;
@@ -65,6 +68,9 @@ int leave_block(MD_BLOCKTYPE t, void *details, void *userdata) {
 			break;
 		case MD_BLOCK_QUOTE:
 			print("\\end{displayquote}\n");
+			break;
+		case MD_BLOCK_CODE:
+			print("\\end{verbatim}\n");
 			break;
 		case MD_BLOCK_UL:
 			print("\\end{itemize}\n");
