@@ -33,7 +33,7 @@ int enter_block(MD_BLOCKTYPE t, void *details, void *userdata) {
 		case MD_BLOCK_H:
 			switch (((MD_BLOCK_H_DETAIL *)details)->level) {
 				case 1:
-					print("\\part{");
+					print("\\part*{");
 					break;
 				case 2:
 					print("\\section{");
