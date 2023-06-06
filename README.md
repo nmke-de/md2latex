@@ -16,7 +16,7 @@ So many dependencies scare me!
 
 ## Build
 
-Type `make`.
+Type `make`. To build on Linux with dietlibc, type `make md2latex` instead.
 
 ## Usage
 
